@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.alexlemurski.auxiliary.AuthorEntityService;
+import ru.alexlemurski.auxiliary.AuthorDtoService;
 import ru.alexlemurski.entity.Books;
 import ru.alexlemurski.layers.dto.BooksDto;
 import ru.alexlemurski.repository.AuthorRepository;
@@ -22,7 +22,7 @@ public class BooksServiceImpl implements BooksService {
 
     private final BooksRepository booksRepository;
     private final AuthorRepository authorRepository;
-    private final AuthorEntityService authorEntityService;
+    private final AuthorDtoService authorDtoService;
     private final GenreRepository genreRepository;
 
     @Override
@@ -33,7 +33,7 @@ public class BooksServiceImpl implements BooksService {
         return BooksDto.builder()
             .id(books.getId())
             .bookName(books.getBookName())
-            .author(authorEntityService.buildAuthorName(books.getAuthor()))
+            .author(authorDtoService.buildAuthorName(books.getAuthor()))
             .genre(books.getGenre().getGenreName())
             .build();
     }
@@ -45,7 +45,7 @@ public class BooksServiceImpl implements BooksService {
         return booksList.stream().map(books -> BooksDto.builder()
                 .id(books.getId())
                 .bookName(books.getBookName())
-                .author(authorEntityService.buildAuthorName(books.getAuthor()))
+                .author(authorDtoService.buildAuthorName(books.getAuthor()))
                 .genre(books.getGenre().getGenreName())
                 .build())
             .toList().stream()

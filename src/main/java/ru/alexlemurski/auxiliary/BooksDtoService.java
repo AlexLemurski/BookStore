@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BooksEntityService {
+public class BooksDtoService {
 
     public static final int booksMinValue = 2;
     public static final int booksMaxValue = 50;

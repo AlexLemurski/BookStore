@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-import static ru.alexlemurski.auxiliary.BooksEntityService.*;
+import static ru.alexlemurski.auxiliary.BooksDtoService.*;
 
 public record BooksUpdatePayload(
 

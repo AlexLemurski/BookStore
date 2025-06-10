@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.alexlemurski.auxiliary.BooksEntityService;
+import ru.alexlemurski.auxiliary.BooksDtoService;
 import ru.alexlemurski.entity.Author;
 import ru.alexlemurski.layers.dto.AuthorDto;
 import ru.alexlemurski.repository.AuthorRepository;
@@ -21,7 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;
     private final BooksRepository booksRepository;
-    private final BooksEntityService booksEntityService;
+    private final BooksDtoService booksDtoService;
 
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
@@ -33,7 +33,7 @@ public class AuthorServiceImpl implements AuthorService {
             .name(author.getName())
             .middleName(author.getMiddleName())
             .surName(author.getSurName())
-            .bookList(booksEntityService.buildBookGenreName(author, booksRepository))
+            .bookList(booksDtoService.buildBookGenreName(author, booksRepository))
             .build();
     }
 
@@ -46,7 +46,7 @@ public class AuthorServiceImpl implements AuthorService {
                 .name(author.getName())
                 .middleName(author.getMiddleName())
                 .surName(author.getSurName())
-                .bookList(booksEntityService.buildBookGenreName(author, booksRepository))
+                .bookList(booksDtoService.buildBookGenreName(author, booksRepository))
                 .build()).toList().stream()
             .sorted(Comparator.comparingLong(AuthorDto::id))
             .toList();

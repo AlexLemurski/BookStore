@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.alexlemurski.entity.Author;
 
 @Service
-public class AuthorEntityService {
+public class AuthorDtoService {
 
     public static final int authorMinValue = 2;
     public static final int authorMaxValue = 50;
