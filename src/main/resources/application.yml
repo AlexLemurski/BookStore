@@ -1,0 +1,36 @@
+spring:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    generate-ddl: true
+    open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library
+    username: admin
+    password: admin
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/library
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8081/realms/library
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: library
+            client-secret: q43Phx8qAO0o6BNZuYp73KgAj6iALa3f
+            scope: openid
+
+server:
+  port: 8082
