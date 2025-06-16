@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.alexlemurski.auxiliary.BooksDtoService;
+import ru.alexlemurski.service_dto.BooksDtoService;
 import ru.alexlemurski.entity.Author;
 import ru.alexlemurski.layers.dto.AuthorDto;
 import ru.alexlemurski.repository.AuthorRepository;
@@ -16,7 +16,6 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;

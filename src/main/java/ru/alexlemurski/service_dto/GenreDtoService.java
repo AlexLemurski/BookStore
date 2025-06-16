@@ -1,4 +1,4 @@
-package ru.alexlemurski.auxiliary;
+package ru.alexlemurski.service_dto;
 
 import org.springframework.stereotype.Service;
 

@@ -3,8 +3,9 @@ package ru.alexlemurski.layers.payload;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import ru.alexlemurski.service_dto.AuthorDtoService;
 
-import static ru.alexlemurski.auxiliary.AuthorDtoService.*;
+import static ru.alexlemurski.service_dto.AuthorDtoService.*;
 
 public record AuthorNewPayload(
 
@@ -24,4 +25,5 @@ public record AuthorNewPayload(
     String middleName
 
 ) {
+
 }

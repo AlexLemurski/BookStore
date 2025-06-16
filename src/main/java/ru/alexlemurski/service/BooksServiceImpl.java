@@ -4,12 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.alexlemurski.auxiliary.AuthorDtoService;
 import ru.alexlemurski.entity.Books;
 import ru.alexlemurski.layers.dto.BooksDto;
 import ru.alexlemurski.repository.AuthorRepository;
 import ru.alexlemurski.repository.BooksRepository;
 import ru.alexlemurski.repository.GenreRepository;
+import ru.alexlemurski.service_dto.AuthorDtoService;
 
 import java.util.Comparator;
 import java.util.List;
@@ -17,7 +17,6 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class BooksServiceImpl implements BooksService {
 
     private final BooksRepository booksRepository;

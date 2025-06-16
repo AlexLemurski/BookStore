@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-import static ru.alexlemurski.auxiliary.GenreDtoService.*;
+import static ru.alexlemurski.service_dto.GenreDtoService.*;
 
 public record GenreNewPayload(
 
