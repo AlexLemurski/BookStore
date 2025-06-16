@@ -3,7 +3,7 @@ package ru.alexlemurski.service_dto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GenreDtoService {
+public final class GenreDtoService {
 
     public static final int genreMinValue = 2;
     public static final int genreMaxValue = 50;

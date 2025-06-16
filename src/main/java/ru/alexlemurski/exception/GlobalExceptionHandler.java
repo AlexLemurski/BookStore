@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 @ControllerAdvice
 @RequiredArgsConstructor
-public class GlobalExceptionHandler {
+public final class GlobalExceptionHandler {
 
     private final MessageSource messageSource;
 

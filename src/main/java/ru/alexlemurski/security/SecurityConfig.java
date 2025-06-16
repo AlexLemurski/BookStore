@@ -36,10 +36,10 @@ public class SecurityConfig {
 
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationProvider() {
-        var converter = new JwtAuthenticationConverter();
+        var jwtAuthenticationConverter = new JwtAuthenticationConverter();
         var jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-        converter.setPrincipalClaimName("preferred_username");
-        converter.setJwtGrantedAuthoritiesConverter(jwt -> {
+        jwtAuthenticationConverter.setPrincipalClaimName("preferred_username");
+        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwt -> {
             var authorities = jwtGrantedAuthoritiesConverter.convert(jwt);
 //            var roles = (List<String>) jwt.getClaimAsMap("realm_access").get("roles");
             var roles = jwt.getClaimAsStringList("spring_sec_roles");
@@ -50,7 +50,7 @@ public class SecurityConfig {
                         .map(GrantedAuthority.class::cast))
                 .toList();
         });
-        return converter;
+        return jwtAuthenticationConverter;
     }
 
     @Bean

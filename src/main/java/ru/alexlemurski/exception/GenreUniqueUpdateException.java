@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.dao.DataIntegrityViolationException;
 
 @Getter
-public class GenreUniqueUpdateException extends DataIntegrityViolationException {
+public final class GenreUniqueUpdateException extends DataIntegrityViolationException {
 
     private final Long genreId;
     private final String genreName;

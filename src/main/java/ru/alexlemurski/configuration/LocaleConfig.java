@@ -1,4 +1,4 @@
-package ru.alexlemurski.message;
+package ru.alexlemurski.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

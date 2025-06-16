@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "t_author")
-public class Author {
+public final class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

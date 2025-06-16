@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BooksDtoService {
+public final class BooksDtoService {
 
     public static final int booksMinValue = 2;
     public static final int booksMaxValue = 50;
     public static final String booksRegexExpressionRu = "^\\p{IsCyrillic}+$";
 
-    public final List<BooksDto> buildBookGenreName(Author author, BooksRepository booksRepository) {
+    public List<BooksDto> buildBookGenreName(Author author, BooksRepository booksRepository) {
         List<Books> booksList = booksRepository.findBooksByAuthorId(author.getId());
         return new ArrayList<>(booksList.stream()
             .map(book -> BooksDto.builder()
