@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 @ControllerAdvice
 @RequiredArgsConstructor
-public final class GlobalExceptionHandler {
+final class GlobalExceptionHandler {
 
     private final MessageSource messageSource;
 
@@ -35,7 +35,7 @@ public final class GlobalExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<ProblemDetail> handleException(NoSuchElementException exception,
-                                                                      Locale locale) {
+                                                         Locale locale) {
         ProblemDetail problemDetail = ProblemDetail
             .forStatusAndDetail(HttpStatus.NOT_FOUND, messageSource.getMessage(exception.getMessage(),
                 new Object[0], exception.getMessage(), locale));
@@ -44,7 +44,7 @@ public final class GlobalExceptionHandler {
 
     @ExceptionHandler(GenreUniqueCreateException.class)
     public ResponseEntity<ProblemDetail> handleException(GenreUniqueCreateException exception,
-                                                                          Locale locale) {
+                                                         Locale locale) {
         ProblemDetail problemDetail = ProblemDetail
             .forStatusAndDetail(HttpStatus.BAD_REQUEST, messageSource.getMessage(exception.getMessage(),
                 new Object[0], exception.getMessage(), locale));
@@ -53,7 +53,7 @@ public final class GlobalExceptionHandler {
 
     @ExceptionHandler(GenreUniqueUpdateException.class)
     public ResponseEntity<ProblemDetail> handleException(GenreUniqueUpdateException exception,
-                                                                          Locale locale) {
+                                                         Locale locale) {
         ProblemDetail problemDetail = ProblemDetail
             .forStatusAndDetail(HttpStatus.BAD_REQUEST, messageSource.getMessage(exception.getMessage(),
                 new Object[0], exception.getMessage(), locale));

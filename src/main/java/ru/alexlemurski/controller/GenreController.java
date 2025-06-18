@@ -24,7 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public final class GenreController {
+public class GenreController {
 
     private final GenreService genreService;
 

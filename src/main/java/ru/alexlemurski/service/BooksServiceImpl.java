@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-public class BooksServiceImpl implements BooksService {
+class BooksServiceImpl implements BooksService {
 
     private final BooksRepository booksRepository;
     private final AuthorRepository authorRepository;

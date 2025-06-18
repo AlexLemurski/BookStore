@@ -18,7 +18,7 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-public class GenreServiceImpl implements GenreService {
+class GenreServiceImpl implements GenreService {
 
     private final GenreRepository genreRepository;
 
